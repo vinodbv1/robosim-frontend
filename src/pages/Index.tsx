@@ -11,7 +11,7 @@ interface Position {
   y: number;
 }
 
-const API_BASE_URL = "https://robosim-backend.onrender.com" // http://localhost:5000"; // Backend Flask server
+const API_BASE_URL = "http://localhost:5000"; // "https://robosim-backend.onrender.com" //  Backend Flask server
 
 const Index = () => {
   const { toast } = useToast();
@@ -76,6 +76,8 @@ const Index = () => {
     };
 
     try {
+      console.log("Payload details", payload)
+      setSimulationFrame(null)
       const response = await fetch(`${API_BASE_URL}/api/start-simulation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -144,7 +146,7 @@ const Index = () => {
     try {
       await fetch(`${API_BASE_URL}/api/stop-simulation`, { method: 'POST' });
       setStatus('ready');
-      setSimulationFrame(null);
+      // setSimulationFrame(null);
       setIsPaused(false);
       
       toast({

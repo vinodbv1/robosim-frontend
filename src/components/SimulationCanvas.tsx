@@ -154,8 +154,8 @@ export const SimulationCanvas = ({
       <div className="relative border-2 border-border rounded-lg overflow-hidden bg-card">
         <canvas
           ref={canvasRef}
-          width={800}
-          height={600}
+          width={1000}
+          height={1000}
           onClick={handleCanvasClick}
           className={`w-full h-auto ${
             !disabled && !isSimulating && mapImage ? 'cursor-crosshair' : 'cursor-default'
