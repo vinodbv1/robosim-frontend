@@ -11,7 +11,7 @@ interface Position {
   y: number;
 }
 
-const API_BASE_URL = "http://localhost:5000"; // Backend Flask server
+const API_BASE_URL = "https://robosim-backend.onrender.com" // http://localhost:5000"; // Backend Flask server
 
 const Index = () => {
   const { toast } = useToast();
